@@ -1,0 +1,12 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.vcxproj.user
+*.db
+*.pdb
+*.exe
+*.ilk
+*.log
+*.tlog/
+x64/

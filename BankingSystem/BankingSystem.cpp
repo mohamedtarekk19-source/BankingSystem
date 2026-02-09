@@ -92,6 +92,4 @@ int main() {
 
     return 0;
 }
-// hn3ml Login method for admin with authentication user and password (will be fixed ) 
-// 3lshan lma ndkhol 3la employee ykun 3n tre2 admin ,, 
-// lma n3ml l userinterface fl main mhtaga ttzbt 
+//Hello

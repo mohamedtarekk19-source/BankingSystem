@@ -17,7 +17,6 @@ int main() {
     cin.ignore(); 
 
     if (choice == 1) {
-        // ---------- Client ----------
         int id;
         string name, password;
         double balance;
@@ -92,4 +91,3 @@ int main() {
 
     return 0;
 }
-//Hello

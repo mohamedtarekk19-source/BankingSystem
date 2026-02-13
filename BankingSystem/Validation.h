@@ -7,6 +7,8 @@ class Validation {
 public:
     static bool checkName(string s);
     static bool checkPassword(string p);
+    static string enterName();
+    static string enterPassword();
 };
 
 

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Person::Person() {
+Person::Person()  {
 }
 
 Person::Person(int id, string name, string password)
@@ -23,7 +23,7 @@ void Person::setName(string name) {
         this->name = name;
     }
     else {
-       throw "Invalid name!\n";
+       cout << "Invalid name!\n";
     }
 }
 
@@ -32,7 +32,7 @@ void Person::setPassword(string password) {
         this->password = password;
     }
     else {
-        throw "Invalid password!\n";
+        cout<< "Invalid password!\n";
     }
 }
 

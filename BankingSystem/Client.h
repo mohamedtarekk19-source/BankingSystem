@@ -1,7 +1,4 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <cctype>	
 #include"Person.h"
 class Client :public Person
 {
@@ -17,5 +14,6 @@ public:
 	void withdraw(double amount);
 	void transferTo(double amount, Client& R);
 
+	
 };
 

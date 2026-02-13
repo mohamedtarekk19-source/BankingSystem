@@ -12,7 +12,6 @@ protected:
 public:
     Person();
     Person(int id, string name, string password);
-
     void setName(string name);
     void setId(int id);
     void setPassword(string password);

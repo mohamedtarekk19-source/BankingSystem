@@ -1,8 +1,6 @@
-#include <iostream>
-#include <string>
-#include <cctype>
+#pragma once
 #include"Person.h"
-#include "Validation.h"
+
 
 class Employee :public Person
 {
@@ -14,5 +12,6 @@ public:
 	void setSalary(double salary);
 	double getSalary();
 	void display() override;
+	~Employee() = default;
 };
 	

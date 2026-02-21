@@ -14,13 +14,13 @@ void Client:: setBalance(double balance) {
 	}
 		
 }
-double Client::checkBalance() {
+double Client::checkBalance()const {
 	return balance;
 }
 void Client::display() {
-	cout << "ID : " << id <<"|"
-		<< " Name : " << name << "|"
-		<< " PassWord : " << password << "|"
+	cout << "ID : " << id <<" - "
+		<< " Name : " << name << " - "
+		<< " PassWord : " << password << " - "
 		<< " Balance : " << balance;
 	cout << endl;
 }

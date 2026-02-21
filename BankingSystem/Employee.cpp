@@ -18,13 +18,13 @@ void Employee::setSalary(double salary) {
 	
 	}
 }
-double Employee::getSalary() {
+double Employee::getSalary()const {
 	return salary;
 }
 void Employee::display() {
-	cout << "ID : " << id << "|"
-		<< " Name : " << name << "|"
-		<< " PassWord : " << password << "|"
+	cout << "ID : " << id << "-"
+		<< " Name : " << name << "-"
+		<< " PassWord : " << password << "-"
 		<< " Salary : " << salary;
 	cout << endl;
 }

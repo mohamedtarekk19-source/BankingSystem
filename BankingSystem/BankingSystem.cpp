@@ -7,18 +7,22 @@
 #include "Client.h"
 #include "Admin.h"
 #include"Validation.h"
-
+#include<vector>
+#include"FilesHelper.h"
+#include<fstream>
+#include"FileManager.h"
 using namespace std;
-
+const string Clients = "Clients.txt";
+const string ClientsId = "ClientsLastId.txt";
+const string Employees = "Employees.txt";
+const string EmployeesId = "EmployeesLastId.txt";
+const string Admins = "Admins.txt";
+const string AdminsId = "AdminsLastId.txt";
 int main() {
-    Client c1(50, "Mohamed", "Password156", 3000);
-  
-    fstream f1("Clients.txt", ios::out);
-    f1 << c1.getId() << "-"
-        << c1.getName() << "-"
-        << c1.getPassword() << "-"
-        << c1.checkBalance() << endl;
-    f1.close();
-
+    Client c(50, "Mohamed", "Password", 20000);
+    FileManager f;
+    f.removeAllClients();
+   
+    
     return 0;
 }

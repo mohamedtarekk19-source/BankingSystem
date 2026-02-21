@@ -10,7 +10,7 @@ public:
 	Employee();
 	Employee(int id, string name, string password, double salary);
 	void setSalary(double salary);
-	double getSalary();
+	double getSalary() const;
 	void display() override;
 	~Employee() = default;
 };

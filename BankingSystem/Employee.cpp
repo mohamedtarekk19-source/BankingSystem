@@ -78,19 +78,19 @@ void Employee::editClient(int id, string name, string password, double balance) 
 		return;
 	}
 
-	// 1️⃣ عمل Backup
+
 	if (rename("Clients.txt", "ClientsBackup.txt") != 0) {
 		cout << "Error creating backup!\n";
 		return;
 	}
 
-	// 2️⃣ إعادة كتابة البيانات باستخدام addClient
+
 	
 	for (auto& c : allClients) {
 		fileManager.addClient(c);
 	}
 
-	// 3️⃣ لو كله تمام نمسح الباكاب
+	
 	remove("ClientsBackup.txt");
 
 	cout << "Client updated successfully.\n";

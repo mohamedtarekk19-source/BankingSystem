@@ -1,5 +1,2 @@
-﻿  BankingSystem.cpp
-C:\Users\Hp\OneDrive\Desktop\BankingSystem\BankingSystem\FileManager.h(4,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file 'BankingSystem.cpp')
-  
+﻿  Employee.cpp
   BankingSystem.vcxproj -> C:\Users\Hp\OneDrive\Desktop\BankingSystem\x64\Debug\BankingSystem.exe

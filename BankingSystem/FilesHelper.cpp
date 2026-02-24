@@ -34,7 +34,7 @@ int FilesHelper::getLast(const string& fileName) {
 }
 
 void FilesHelper::saveClient(const string& fileName, const string& lastIdFile, const Client& c) {
-	ofstream file(Clients , ios::app);
+	ofstream file(fileName , ios::app);
 	if (!file.is_open()) {
 		cerr << "error opening file " << Clients << endl;
 		return;
@@ -47,7 +47,7 @@ void FilesHelper::saveClient(const string& fileName, const string& lastIdFile, c
 	saveLast(lastIdFile, c.getId());
 }
 void FilesHelper::saveEmployee(const string& fileName, const string& lastIdFile, const Employee& e){
-	ofstream file(Employees, ios::app);
+	ofstream file(fileName, ios::app);
 	if (!file.is_open()) {
 		cerr << "error opening file " << Employees << endl;
 		return;
@@ -66,7 +66,7 @@ vector<Client> FilesHelper::getClients() {
 	string line;
 	if (!file.is_open()) {
 		cerr << "error opening file " << Clients << endl;
-		return{};
+		return vector<Client>();
 	}
 	while (getline(file, line)) {
 		Client c = Parser::parseToClient(line);
@@ -82,7 +82,7 @@ vector<Employee> FilesHelper::getEmployees() {
 	string line;
 	if (!file.is_open()) {
 		cerr << "error opening file " << Employees << endl;
-		return{};
+		return vector<Employee>();
 	}
 	while (getline(file, line)) {
 		Employee e = Parser::parseToEmployee(line);
@@ -97,7 +97,7 @@ vector<Admin> FilesHelper::getAdmins() {
 	string line;
 	if (!file.is_open()) {
 		cerr << "error opening file " << Admins << endl;
-		return{};
+		return vector<Admin>();
 	}
 	while (getline(file, line)) {
 		Admin a = Parser::parseToAdmin(line);

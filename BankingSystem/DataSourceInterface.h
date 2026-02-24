@@ -1,8 +1,9 @@
 #pragma once
 #include <vector>
-#include "Client.h"
-#include "Employee.h"
-#include "Admin.h"
+
+class Client;
+class Employee;
+class Admin;
 
 class DataSourceInterface {
 public:
@@ -11,9 +12,9 @@ public:
     virtual void addEmployee(const Employee& obj) = 0;
     virtual void addAdmin(const Admin& obj) = 0;
 
-    virtual vector<Client> getAllClients() = 0;
-    virtual vector<Employee> getAllEmployees() = 0;
-    virtual vector<Admin> getAllAdmins() = 0;
+    virtual std::vector<Client> getAllClients() = 0;
+    virtual std::vector<Employee> getAllEmployees() = 0;
+    virtual std::vector<Admin> getAllAdmins() = 0;
 
     virtual void removeAllClients() = 0;
     virtual void removeAllEmployees() = 0;

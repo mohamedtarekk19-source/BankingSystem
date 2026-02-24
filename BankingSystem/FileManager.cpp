@@ -1,12 +1,15 @@
 #include "FileManager.h"
-#include"FilesHelper.h"
+#include "FilesHelper.h"
+#include "Client.h"
+#include "Employee.h"
+#include "Admin.h"
 const string Clients = "Clients.txt";
 const string ClientsId = "ClientsLastId.txt";
 const string Employees = "Employees.txt";
 const string EmployeesId = "EmployeesLastId.txt";
 const string Admins = "Admins.txt";
 const string AdminsId = "AdminsLastId.txt";
-
+using namespace std;
 
 void FileManager::addClient(const Client& obj) {
 	FilesHelper::saveClient(Clients, ClientsId, obj);

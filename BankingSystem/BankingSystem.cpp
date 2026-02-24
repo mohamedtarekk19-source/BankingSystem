@@ -12,17 +12,16 @@
 #include<fstream>
 #include"FileManager.h"
 using namespace std;
-const string Clients = "Clients.txt";
-const string ClientsId = "ClientsLastId.txt";
-const string Employees = "Employees.txt";
-const string EmployeesId = "EmployeesLastId.txt";
-const string Admins = "Admins.txt";
-const string AdminsId = "AdminsLastId.txt";
+
 int main() {
-    Client c(50, "Mohamed", "Password", 20000);
-    FileManager f;
-    f.removeAllClients();
-   
-    
+
+    Employee e1(100, "MohamedEldeeb", "Password1789", 5000);
+    Admin a;
+    FileManager fm;
+    //fm.removeAllEmployees();
+    //a.addEmployee(e1);
+    //a.searchEmployee(105);
+    a.listEmployees();
     return 0;
 }
+

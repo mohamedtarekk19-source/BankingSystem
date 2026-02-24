@@ -6,7 +6,7 @@
 #include<string>
 #include<iostream>
 #include<vector>
-
+using namespace std;
 class FilesHelper {
 public:
 	static void saveLast(const string&fileName, int id);

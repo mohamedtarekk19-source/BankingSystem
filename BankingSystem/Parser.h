@@ -15,7 +15,7 @@ public:
 	static vector<string> Split(string line) {
 		vector<string> result; 
 		stringstream ss(line); 
-		string Readable;						  
+		string Readable;						  //1000 -mohaemd -password -5000
 		while (getline(ss, Readable, '-')) {	  
 			result.push_back(Readable);			  
 			

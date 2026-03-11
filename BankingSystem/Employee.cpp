@@ -57,7 +57,7 @@ void Employee::listClients() {
 		element.display();
 	}
 }
-void Employee::editClient(int id, string& name, string &password, double balance) {
+void Employee::editClient(int id,const string& name, const string& password, double balance) {
     FileManager fileManager;
     vector<Client> allClients = fileManager.getAllClients(); 
 

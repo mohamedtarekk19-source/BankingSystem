@@ -21,6 +21,6 @@ public:
 	void addClient(const Client& obj);
 	Client* SearchClient(int id);
 	void listClients();
-	void editClient(int id, string& name, string &password, double balance);
+	void editClient(int id, const string& name, const string &password, double balance);
 };
 	

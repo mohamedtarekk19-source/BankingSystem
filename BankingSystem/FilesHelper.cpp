@@ -100,6 +100,7 @@ vector<Admin> FilesHelper::getAdmins() {
 		return vector<Admin>();
 	}
 	while (getline(file, line)) {
+
 		Admin a = Parser::parseToAdmin(line);
 		AllAdmins.push_back(a);
 

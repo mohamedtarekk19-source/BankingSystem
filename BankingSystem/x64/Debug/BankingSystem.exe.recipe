@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\Hp\OneDrive\Desktop\BankingSystem\x64\Debug\BankingSystem.exe</FullPath>
+      <FullPath>C:\BankingSystem\x64\Debug\BankingSystem.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

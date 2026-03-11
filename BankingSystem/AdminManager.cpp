@@ -17,12 +17,15 @@ void AdminManager::printAdminMenu() {
 }
 
 Admin* AdminManager::login(int id, string password) {
-    static FileManager fm;
-    static vector<Admin> admins = fm.getAllAdmins();
+    FileManager fm;                  // كل مرة جديد
+    vector<Admin> admins = fm.getAllAdmins();  // اقرأ الملف الآن
+
 
     for (auto& a : admins) {
+        cout << "ID: " << a.getId() << " PASS: " << a.getPassword() << endl;
+
         if (a.getId() == id && a.getPassword() == password) {
-            return &a; // pointer على النسخة في الذاكرة
+            return &a;
         }
     }
     return nullptr;
@@ -113,23 +116,6 @@ bool AdminManager::adminOptions(Admin* admin) {
 
         admin->editEmployee(id, name, password, salary);
 
-        // تحديث Employees.txt مباشرة بعد التعديل
-        FileManager fm;
-        vector<Employee> allEmployees = fm.getAllEmployees();
-        for (auto& e : allEmployees) {
-            if (e.getId() == id) {
-                e.setName(name);
-                e.setPassword(password);
-                e.setSalary(salary);
-                break;
-            }
-        }
-        fm.removeAllEmployees();
-        for (auto& e : allEmployees) {
-            fm.addEmployee(e);
-        }
-
-        cout << "Employee updated successfully.\n";
         break;
     }
 

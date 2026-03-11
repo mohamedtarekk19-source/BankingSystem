@@ -6,6 +6,7 @@
 #include "Person.h"
 #include "FileManager.h"
 #include"Validation.h"
+#include"Employee.h"
 using namespace std;
 
 void ClientManager::printClientMenu() {
@@ -18,13 +19,14 @@ void ClientManager::printClientMenu() {
 }
 
 void ClientManager::updatePassword(Person* person) {
+
     if (!person) {
         cout << "No client logged in!\n";
         return;
     }
 
     string newPassword;
-    cout << "Enter New Password: \n";
+    cout << "Enter New Password:\n";
     getline(cin, newPassword);
 
     if (!Validation::checkPassword(newPassword)) {
@@ -35,21 +37,16 @@ void ClientManager::updatePassword(Person* person) {
     person->setPassword(newPassword);
     cout << "Password Updated Successfully\n";
 
-    // حفظ التغيير في Clients.txt
     Client* client = dynamic_cast<Client*>(person);
+
     if (client) {
-        FileManager fm;
-        vector<Client> allClients = fm.getAllClients();
-        for (auto& c : allClients) {
-            if (c.getId() == client->getId()) {
-                c = *client;
-                break;
-            }
-        }
-        fm.removeAllClients();
-        for (auto& c : allClients) {
-            fm.addClient(c);
-        }
+        Employee e1;
+        e1.editClient(
+            client->getId(),
+            client->getName(),
+            client->getPassword(),
+            client->checkBalance()
+        );
     }
 }
 
@@ -90,20 +87,20 @@ bool ClientManager::clientOptions(Client* client) {
         cout << "Enter amount: ";
         cin >> amount;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        client->deposit(amount);
-        cout << "Deposit Successful. New Balance: " << client->checkBalance() << endl;
 
-        // تحديث Clients.txt
-        for (auto& c : allClients) {
-            if (c.getId() == client->getId()) {
-                c = *client;
-                break;
-            }
-        }
-        fm.removeAllClients();
-        for (auto& c : allClients) {
-            fm.addClient(c);
-        }
+        client->deposit(amount);
+
+        cout << "Deposit Successful. New Balance: "
+            << client->checkBalance() << endl;
+
+        Employee e1;
+        e1.editClient(
+            client->getId(),
+            client->getName(),
+            client->getPassword(),
+            client->checkBalance()
+        );
+
         break;
     }
 
@@ -115,17 +112,14 @@ bool ClientManager::clientOptions(Client* client) {
         client->withdraw(amount);
         cout << "Withdraw Successful. New Balance: " << client->checkBalance() << endl;
 
-        // تحديث Clients.txt
-        for (auto& c : allClients) {
-            if (c.getId() == client->getId()) {
-                c = *client;
-                break;
-            }
-        }
-        fm.removeAllClients();
-        for (auto& c : allClients) {
-            fm.addClient(c);
-        }
+        Employee e1;
+        e1.editClient(
+            client->getId(),
+            client->getName(),
+            client->getPassword(),
+            client->checkBalance()
+        );
+
         break;
     }
 

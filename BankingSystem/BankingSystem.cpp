@@ -1,6 +1,8 @@
 ﻿#include"Screens.h"
-
+#include"AdminManager.h"
 int main() {
-    Screens::runApp();
+    
+
+   Screens::runApp();
     return 0;
 }

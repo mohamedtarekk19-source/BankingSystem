@@ -1,4 +1,14 @@
-﻿  BankingSystem.cpp
+﻿  Admin.cpp
+  AdminManager.cpp
+  BankingSystem.cpp
+  Client.cpp
+  ClientManager.cpp
+  Employee.cpp
+  EmployeeManager.cpp
+  FileManager.cpp
+  FilesHelper.cpp
+  Person.cpp
   Screens.cpp
+  Validation.cpp
   Generating Code...
-  BankingSystem.vcxproj -> C:\Users\Hp\OneDrive\Desktop\BankingSystem\x64\Debug\BankingSystem.exe
+  BankingSystem.vcxproj -> C:\BankingSystem\x64\Debug\BankingSystem.exe

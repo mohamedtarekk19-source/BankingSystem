@@ -83,26 +83,9 @@ void EmployeeManager::editClientInfo(Employee* employee) {
     cin >> balance;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-    // تحديث العميل في الذاكرة
+ 
     employee->editClient(id, name, password, balance);
 
-    // تحديث Clients.txt مباشرة بعد التعديل
-    FileManager fm;
-    vector<Client> allClients = fm.getAllClients();
-    for (auto& c : allClients) {
-        if (c.getId() == id) {
-            c.setName(name);
-            c.setPassword(password);
-            c.setBalance(balance);
-            break;
-        }
-    }
-    fm.removeAllClients();
-    for (auto& c : allClients) {
-        fm.addClient(c);
-    }
-
-    cout << "Client updated successfully.\n";
 }
 
 Employee* EmployeeManager::login(int id, string password) {
